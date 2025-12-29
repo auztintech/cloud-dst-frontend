@@ -6,7 +6,7 @@ import Hint from '../components/Hint';
 
 export default function GrowthPage({ answers, updateAnswer }) {
   return (
-    <PageContainer icon={TrendingUp} title="Expected growth rate?">
+    <PageContainer icon={TrendingUp} title="What growth do you expect in the next 1–3 years?">
       <div style={{
         fontSize: '48px',
         fontWeight: '800',

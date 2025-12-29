@@ -6,7 +6,7 @@ import Hint from '../components/Hint';
 
 export default function StoragePage({ answers, updateAnswer }) {
   return (
-    <PageContainer icon={HardDrive} title="Cloud storage needed?">
+    <PageContainer icon={HardDrive} title="How much cloud storage does your business currently use or expect to need?">
       <div style={{
         fontSize: '40px',
         fontWeight: '800',

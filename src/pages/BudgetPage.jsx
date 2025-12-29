@@ -7,7 +7,7 @@ import Hint from '../components/Hint';
 
 export default function BudgetPage({ answers, updateAnswer }) {
   return (
-    <PageContainer icon={DollarSign} title="Monthly IT budget?">
+    <PageContainer icon={DollarSign} title="What is your approximate monthly IT budget?">
       <Input
         type="number"
         value={answers.monthlyBudget}

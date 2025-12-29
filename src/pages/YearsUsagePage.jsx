@@ -12,7 +12,7 @@ export default function YearsUsagePage({ answers, updateAnswer }) {
   ];
 
   return (
-    <PageContainer icon={Activity} title="How long have you used cloud services?">
+    <PageContainer icon={Activity} title="How long has your business used any cloud services?">
       {options.map(opt => (
         <SelectCard
           key={opt.value}

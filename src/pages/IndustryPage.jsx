@@ -19,7 +19,7 @@ export default function IndustryPage({ answers, updateAnswer }) {
   ];
 
   return (
-    <PageContainer icon={TrendingUp} title="What industry are you in?">
+    <PageContainer icon={TrendingUp} title="What industry is your business in?">
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',

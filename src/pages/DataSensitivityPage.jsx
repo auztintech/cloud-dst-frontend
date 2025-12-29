@@ -11,7 +11,7 @@ export default function DataSensitivityPage({ answers, updateAnswer }) {
   ];
 
   return (
-    <PageContainer icon={Lock} title="Data sensitivity level?">
+    <PageContainer icon={Lock} title="How sensitive is the data you store?">
       {levels.map(level => (
         <SelectCard
           key={level.value}

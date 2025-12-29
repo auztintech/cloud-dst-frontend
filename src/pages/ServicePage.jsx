@@ -9,7 +9,7 @@ export default function ServicePage({ service, answers, toggleService }) {
   const selected = answers.selectedServices[service.id] || [];
 
   return (
-    <PageContainer icon={Icon} title={`Which ${service.title} do you use?`}>
+    <PageContainer icon={Icon} title={service.title}>
       <Hint style={{ marginBottom: '16px' }}>Select all that apply</Hint>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         {service.items.map(item => (

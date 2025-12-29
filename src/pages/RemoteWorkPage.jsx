@@ -6,7 +6,7 @@ import Hint from '../components/Hint';
 
 export default function RemoteWorkPage({ answers, updateAnswer }) {
   return (
-    <PageContainer icon={Users} title="Remote work percentage?">
+    <PageContainer icon={Users} title="What proportion of your staff work remotely at least part of the time?">
       <div style={{
         fontSize: '48px',
         fontWeight: '800',

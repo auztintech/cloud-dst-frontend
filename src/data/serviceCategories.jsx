@@ -3,87 +3,69 @@ import { Building2, TrendingUp, HardDrive, Shield, Server, Cloud, MessageSquare,
 export const SERVICE_CATEGORIES = [
   {
     id: 'businessTools',
-    title: 'Business Management',
+    title: 'Which business management (accounting/ERP) software does your business use?',
     icon: 'Building2',
     items: ['QuickBooks Online', 'Xero', 'Zoho Books', 'Salesforce', 'Zoho CRM', 'HubSpot', 'Odoo', 'SAP Business One', 'Microsoft Dynamics 365', 'FreshBooks', 'Wave', 'Sage Cloud Accounting']
   },
   {
     id: 'marketing',
-    title: 'Marketing Tools',
+    title: 'Which marketing tools do you use?',
     icon: 'TrendingUp',
     items: ['Mailchimp', 'Sendinblue', 'Constant Contact', 'HubSpot Marketing', 'ActiveCampaign', 'ConvertKit', 'GetResponse', 'Drip']
   },
   {
     id: 'storage',
-    title: 'Cloud Storage',
+    title: 'Which cloud storage service(s) do you use?',
     icon: 'HardDrive',
     items: ['Google Drive', 'Dropbox', 'OneDrive', 'iCloud', 'Box', 'Mega', 'pCloud', 'Sync.com']
   },
   {
     id: 'backup',
-    title: 'Backup Solutions',
+    title: 'Which backup solution(s) do you use?',
     icon: 'Shield',
     items: ['Backblaze', 'Carbonite', 'IDrive', 'AWS Backup', 'Azure Backup', 'Google Vault', 'Barracuda Cloud Backup', 'Acronis']
   },
   {
     id: 'infra',
-    title: 'Infrastructure (IaaS)',
+    title: 'Which type of infrastructure hosting do you use?',
     icon: 'Server',
     items: ['AWS', 'Azure', 'Google Cloud', 'DigitalOcean', 'Linode', 'Vultr', 'OVH', 'IBM Cloud']
   },
   {
     id: 'platform',
-    title: 'Platform (PaaS)',
+    title: 'Do you use any platform services (PaaS) for building/running apps?',
     icon: 'Cloud',
     items: ['Heroku', 'Google App Engine', 'Azure App Service', 'AWS Elastic Beanstalk', 'Firebase', 'Supabase', 'Vercel', 'Netlify', 'Render']
   },
   {
-    id: 'comms',
-    title: 'Communication',
-    icon: 'MessageSquare',
-    items: ['WhatsApp Business API', 'Twilio', 'Microsoft Teams', 'Slack', 'Zoom', 'Google Meet', 'Discord', 'Rocket.Chat']
-  },
-  {
-    id: 'support',
-    title: 'Customer Support',
-    icon: 'Users',
-    items: ['Freshdesk', 'Zendesk', 'Intercom', 'Help Scout', 'LiveChat', 'Drift', 'Crisp', 'Tidio']
-  },
-  {
     id: 'security',
-    title: 'Security Services',
+    title: 'What security services do you use to protect your systems?',
     icon: 'Lock',
     items: ['Cloudflare', 'NordLayer', 'Perimeter 81', 'Auth0', 'Okta', 'LastPass', '1Password', 'Duo Security']
   },
   {
     id: 'analytics',
-    title: 'Analytics & BI',
+    title: 'Do you use any analytics or business-intelligence tools?',
     icon: 'BarChart3',
     items: ['Google Analytics', 'Looker Studio', 'Power BI', 'Tableau Cloud', 'Zoho Analytics', 'Databox', 'Mixpanel', 'Amplitude']
   },
   {
     id: 'database',
-    title: 'Database Services',
+    title: 'What type of database services do you use?',
     icon: 'Database',
     items: ['MongoDB Atlas', 'Amazon RDS', 'Azure SQL', 'Google Cloud SQL', 'Firebase Realtime DB', 'Supabase', 'PlanetScale', 'CockroachDB']
   },
   {
     id: 'payments',
-    title: 'Payment Platforms',
+    title: 'Which payment platforms do you accept online?',
     icon: 'CreditCard',
     items: ['Paystack', 'Flutterwave', 'Stripe', 'PayPal', 'Remita', 'Monnify', 'VoguePay', 'Interswitch']
   },
   {
     id: 'ecommerce',
-    title: 'E-commerce',
+    title: 'Do you sell through an e-commerce platform?',
     icon: 'Package',
     items: ['Shopify', 'WooCommerce', 'Wix eCommerce', 'Squarespace Commerce', 'Magento', 'BigCommerce', 'PrestaShop']
-  },
-  {
-    id: 'productivity',
-    title: 'Productivity Suites',
-    icon: 'FileText',
-    items: ['Google Workspace', 'Microsoft 365', 'Zoho Workplace', 'Notion', 'Monday.com', 'Asana', 'Trello', 'ClickUp']
   }
 ];
 
@@ -94,12 +76,9 @@ export const ICON_MAP = {
   Shield,
   Server,
   Cloud,
-  MessageSquare,
-  Users,
   Lock,
   BarChart3,
   Database,
   CreditCard,
   Package,
-  FileText
 };

@@ -26,11 +26,12 @@ import GrowthPage from './pages/GrowthPage';
 import RemoteWorkPage from './pages/RemoteWorkPage';
 import DisasterRecoveryPage from './pages/DisasterRecoveryPage';
 import StoragePage from './pages/StoragePage';
-import CDNPage from './pages/CDNPage';
-import RequestsPage from './pages/RequestsPage';
 import CompliancePage from './pages/CompliancePage';
 import ServicePage from './pages/ServicePage';
+import PlatformPage from './pages/PlatformPage';
 import ResultsPage from './pages/ResultsPage';
+import AnalyticsPage from './pages/AnalyticsPage';
+import EcommercePage from './pages/EcommercePage';
 
 export default function App() {
   const [page, setPage] = useState(0);
@@ -55,11 +56,17 @@ export default function App() {
     storageGB: 50,
     cdnGB: 0,
     monthlyRequests: 100000,
-    selectedServices: {}
+    selectedServices: {},
+    usesPaaS: '',             
+    platformServices: [],       
+    usesAnalytics: '',       
+    analyticsTools: [],       
+    usesEcommerce: '',        
+    ecommercePlatforms: []
   });
   const [score, setScore] = useState(0);
 
-  const totalPages = 17 + SERVICE_CATEGORIES.length;
+  const totalPages = 15 + SERVICE_CATEGORIES.length;
 
   useEffect(() => {
     if (page === totalPages) {
@@ -112,29 +119,41 @@ export default function App() {
 
   // Render current page
   const renderPage = () => {
-    if (page === 0) return <BusinessNamePage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 1) return <IndustryPage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 2) return <EmployeesPage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 3) return <LocationPage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 4) return <YearsUsagePage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 5) return <BudgetPage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 6) return <InfrastructurePage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 7) return <CloudProviderPage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 8) return <PainPointsPage answers={answers} toggleArrayItem={toggleArrayItem} />;
-    if (page === 9) return <DataSensitivityPage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 10) return <GrowthPage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 11) return <RemoteWorkPage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 12) return <DisasterRecoveryPage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 13) return <StoragePage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 14) return <CDNPage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 15) return <RequestsPage answers={answers} updateAnswer={updateAnswer} />;
-    if (page === 16) return <CompliancePage answers={answers} toggleArrayItem={toggleArrayItem} />;
+    if (page === 0) return <IndustryPage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 1) return <EmployeesPage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 2) return <LocationPage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 3) return <YearsUsagePage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 4) return <BudgetPage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 5) return <InfrastructurePage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 6) return <CloudProviderPage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 7) return <PainPointsPage answers={answers} toggleArrayItem={toggleArrayItem} />;
+    if (page === 8) return <DataSensitivityPage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 9) return <GrowthPage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 10) return <RemoteWorkPage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 11) return <DisasterRecoveryPage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 12) return <StoragePage answers={answers} updateAnswer={updateAnswer} />;
+    if (page === 13) return <CompliancePage answers={answers} toggleArrayItem={toggleArrayItem} />;
     
-    // Service pages (14 categories)
-    if (page >= 17 && page < 17 + SERVICE_CATEGORIES.length) {
+    // Service pages (11 categories)
+    if (page >= 14 && page < 14 + SERVICE_CATEGORIES.length) {
+      const service = SERVICE_CATEGORIES[page - 14];
+      
+      // Use custom PlatformPage for the 'platform' category
+      if (service.id === 'platform') {
+        return <PlatformPage answers={answers} updateAnswer={updateAnswer} />;
+      }
+
+      if (service.id === 'analytics') {
+        return <AnalyticsPage answers={answers} updateAnswer={updateAnswer} />;
+      }
+      
+      if (service.id === 'ecommerce') {
+        return <EcommercePage answers={answers} updateAnswer={updateAnswer} />;
+      }
+      // Use regular ServicePage for all other categories
       return (
         <ServicePage
-          service={SERVICE_CATEGORIES[page - 17]}
+          service={service}
           answers={answers}
           toggleService={toggleService}
         />
@@ -191,7 +210,7 @@ export default function App() {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
             <Cloud size={28} />
-            <div style={{ fontSize: '20px', fontWeight: '700' }}>Cloud Assessment</div>
+            <div style={{ fontSize: '20px', fontWeight: '700' }}>Cloud Based Decision Tool</div>
           </div>
           <div style={{ fontSize: '13px', opacity: 0.9 }}>
             {page === totalPages ? 'Your Results' : `Question ${page + 1} of ${totalPages}`}

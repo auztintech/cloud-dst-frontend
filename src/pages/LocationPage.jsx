@@ -6,7 +6,7 @@ import Hint from '../components/Hint';
 
 export default function LocationPage({ answers, updateAnswer }) {
   return (
-    <PageContainer icon={Globe} title="Where are you located?">
+    <PageContainer icon={Globe} title="In which State is your business located?">
       <Input
         value={answers.state}
         onChange={e => updateAnswer('state', e.target.value)}
