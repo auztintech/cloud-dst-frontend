@@ -1,18 +1,83 @@
-# React + Vite
+# Cloud Adoption Decision Support Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Cloud Adoption Decision Support Tool (Cloud-DST) is an interactive, data-driven web application designed to help Small and Medium Enterprises (SMEs) navigate the complexities of digital transformation. Built with a focus on SMEs in Southwest Nigeria, this tool simplifies the transition from on-premise infrastructure to cloud-based solutions by providing a comprehensive readiness assessment, cost estimations, and personalized action plans. ☁️
 
-Currently, two official plugins are available:
+## Overview
+This project serves as a bridge between business requirements and technical cloud architecture. By analyzing factors such as team size, current IT infrastructure, data sensitivity, and budget, the application calculates a "Cloud Readiness Score" and generates a downloadable PDF roadmap. It is built using **React 19** and **Vite**, ensuring a high-performance, mobile-first experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- 📊 **Dynamic Scoring Engine**: A custom algorithm that evaluates business maturity and technical readiness.
+- 💰 **Cost Estimator**: Real-time monthly IT budget forecasting based on local currency (NGN) and unit rates.
+- 📋 **Multi-Category Assessment**: Detailed questionnaires covering IaaS, PaaS, SaaS, and cybersecurity needs.
+- 📑 **Report Generation**: Integration with `html2pdf.js` to allow users to export their cloud transition plan as a professional document.
+- 📱 **Mobile-First UI**: A clean, "phone-frame" inspired design optimized for accessibility and ease of use.
+- 🔒 **Compliance Mapping**: Identifies regulatory requirements like NDPR and GDPR based on industry selection.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+| Technology | Purpose |
+| :--- | :--- |
+| [React 19](https://react.dev/) | Component-based UI development |
+| [Vite](https://vitejs.dev/) | Lightning-fast build tool and development server |
+| [Lucide React](https://lucide.dev/) | Clean and consistent modern iconography |
+| [React Router](https://reactrouter.com/) | Client-side navigation and routing |
+| [HTML2PDF.js](https://ekoopmans.github.io/html2pdf.js/) | Client-side PDF generation for reporting |
+| [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) | Custom styling with a focus on modern glassmorphism and gradients |
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
 
-## Expanding the ESLint configuration
+### Installation
+To get a local copy up and running, follow these steps:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/c4041354/cloud-dst-frontend.git
+    ```
+
+2.  **Navigate to the project directory**
+    ```bash
+    cd cloud-dst-frontend
+    ```
+
+3.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
+
+4.  **Launch the Development Server**
+    ```bash
+    npm run dev
+    ```
+    The application will be available at `http://localhost:5173`.
+
+## Usage
+The tool is designed to be intuitive for business owners and IT managers alike:
+
+1.  **Start Assessment**: Click the "Start Assessment" button on the home page.
+2.  **Input Data**: Navigate through the multi-step form, providing details about your current IT setup (e.g., servers, cloud providers, staff size).
+3.  **Select Services**: Tick the SaaS or infrastructure tools your business currently uses or requires (e.g., WhatsApp Business API, QuickBooks, AWS).
+4.  **Review Results**: View your Cloud Readiness Score via an interactive gauge.
+5.  **Export**: Use the "Export Plan" button to save your personalized cloud strategy as a PDF for stakeholders.
+
+## Project Structure
+- `src/pages`: Contains the modular step-by-step assessment pages.
+- `src/utils`: Housing the `scoring.js` and `estimator.js` logic that drives the decision-support engine.
+- `src/components`: Reusable UI elements like `Cards`, `Gauges`, and `Sliders`.
+
+## Contributing
+Contributions make the open-source community an amazing place to learn and create. Any contributions you make are **greatly appreciated**.
+
+- 🍴 Fork the Project
+- 🌿 Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+- 💾 Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+- 🚀 Push to the Branch (`git push origin feature/AmazingFeature`)
+- 📬 Open a Pull Request
+
+
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+[![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://www.npmjs.com/package/dokugen)
